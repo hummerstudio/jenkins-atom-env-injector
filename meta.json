@@ -1,0 +1,11 @@
+{
+  "name": "Inject environment",
+  "summary": "Reads a .env / .properties file and exports every legal key to the following steps.",
+  "author": "hummerstudio",
+  "license": "MIT",
+  "tags": [
+    "official-port",
+    "env-injector"
+  ],
+  "homepage": "https://github.com/hummerstudio/jenkins-atom-env-injector"
+}

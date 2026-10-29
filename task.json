@@ -1,0 +1,49 @@
+{
+  "atomCode": "env-injector",
+  "name": "Inject environment",
+  "version": "1.0.0",
+  "description": "Reads a .env / .properties file and exports every legal key to the following steps.",
+  "execution": {
+    "packagePath": "env-injector.jar",
+    "language": "java",
+    "target": "$atom_java_path -cp env-injector.jar com.jenkinschina.atom.sdk.AtomRunner"
+  },
+  "input": {
+    "files": {
+      "label": "文件（workspace 相对，逗号分隔）",
+      "type": "vuex-input",
+      "default": ".env"
+    },
+    "prefix": {
+      "label": "变量前缀",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "overwrite": {
+      "label": "文件值覆盖同名入参",
+      "type": "checkbox",
+      "default": "true"
+    },
+    "failOnMissing": {
+      "label": "文件不存在就失败",
+      "type": "checkbox",
+      "default": "true"
+    }
+  },
+  "output": {
+    "count": {
+      "type": "string",
+      "description": "导出的变量数"
+    },
+    "keys": {
+      "type": "string",
+      "description": "导出键名（逗号分隔）"
+    }
+  },
+  "x-jenkins": {
+    "protocol": "jenkins-1",
+    "requires": {
+      "runner": ">=0.4.0"
+    }
+  }
+}
